@@ -34,8 +34,12 @@ jobs:
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
-
+      uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0              
+    - name: Update Gradle Wrapper Action
+      uses: gradle-update/update-gradle-wrapper-action@v1.0.20
+    - name: Gradle Self Updater
+      uses: tomsanbear/gradle-self-updater@v0.1.1
+                    
     - name: Add gradle wrapper
       run: gradle wrapper
     - name: Change mode Gradle Wrapper
